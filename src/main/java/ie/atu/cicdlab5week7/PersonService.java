@@ -14,6 +14,14 @@ public class PersonService {
     public Person create(Person p) {
         return repo.save(p);
     }
+
+    public Person update(Person p) {
+        return repo.save(p);
+    }
+
+    public void delete(Person p) {
+        repo.delete(p);
+    }
 /*
     public List<Person> findAll() {
         return repo.findAll(); }

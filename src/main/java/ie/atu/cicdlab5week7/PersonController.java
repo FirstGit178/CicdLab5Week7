@@ -4,6 +4,8 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/persons")
 public class PersonController {
@@ -18,7 +20,19 @@ public class PersonController {
     public Person create(@Valid @RequestBody Person person) {
         return service.create(person);
     }
-    /*
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Person update(@Valid @RequestBody Person person) {
+        return service.create(person);
+    }
+
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Person delete(@Valid @RequestBody Person person) {
+        return service.create(person);
+    }
+/*
     @GetMapping
     public List<Person> all() {
         return service.findAll();}
@@ -27,5 +41,5 @@ public class PersonController {
     public Person byEmployeeId(@PathVariable String id) {
         return service.findByEmployeeId(id);
     }
-    */
+*/
  }
